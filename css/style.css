@@ -138,7 +138,9 @@ body {
 .about-card-text p {
   margin-top: 10px;
 }
-
+.footer{
+  display: inline-block;
+}
 .top-footer {
   margin-top: 100px;
   display: flex;
@@ -147,6 +149,7 @@ body {
   align-items: center;
   background-color: #333333;
   padding: 10px;
+  margin-bottom: 0 !important;
 }
 
 .top-footer img {
@@ -166,6 +169,7 @@ footer .bottom-footer {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+
 }
 
 /* Donate Part */
@@ -232,3 +236,57 @@ footer .bottom-footer {
   font-size: 1rem;
   margin-left: auto;
 }
+
+/* Contact-us style */
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contact-us {
+  margin-top: 30px;
+  margin-left: 300px;
+  width: 500px;
+  padding: 20px;
+  border-radius: 5px;  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+.form:last-child {
+  margin-bottom: 0;
+  margin-left: auto !important;
+}
+
+input,
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #5c70d1;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #a63797;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #5c70d1;
+}
+
+#map {
+  margin-top: 50px;
+  position: relative;
+  left: -200px;
+}
+
