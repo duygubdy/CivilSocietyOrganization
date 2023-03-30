@@ -227,14 +227,21 @@ footer .bottom-footer {
   margin-bottom: 10px;
 }
 
-.donate-card button {
-  background-color:#994abd;
-  color: #fff;
-  border: none;
+.donate-card .donate-button {
+  display: inline-block;
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-left: auto;
+  background-color: #994abd;
+  color: #ffffff;
+  font-size: 1.2em;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 100px;
+}
+
+.donate-card .donate-button:hover {
+  background-color: #ffffff;
+  color: #c53fd6;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* Contact-us style */
@@ -290,3 +297,66 @@ input[type="submit"]:hover {
   left: -200px;
 }
 
+/* Mission Style */
+
+.mission {
+  display: flex;
+  margin-top: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+}
+
+.mission-cards, .mid-mission-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-card {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.mission-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.mission-card p {
+  font-size: 1.1em;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+
+.mission-definition-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -30px;
+}
+
+.mission-definition-card img {
+  width: 100%;
+  height: auto;
+}
+
+.mission-definition-card p {
+  margin: 20px;
+  text-align: center;
+}
+.mission-text {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.mission-text h2 {
+  font-size: 2em;
+}
