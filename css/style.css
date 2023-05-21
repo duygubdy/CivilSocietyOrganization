@@ -291,7 +291,7 @@ textarea {
   position: relative;
   left: -100px;
 }
-#contact-us-table tr:nth-child(7) td:last-child input {
+#uiTable tr:nth-child(7) td:last-child input {
   width: 100%;
   height: auto;
   min-height: 100px ;
