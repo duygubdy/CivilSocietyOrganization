@@ -72,6 +72,6 @@ $(document).ready(function() {
       $('#phone').val('');
       $('#message').val('');
     } else {
-      toastr.error('Starred fields cannot be left blank!', '', { "progressBar": true, "positionClass": "toast-top-center", "timeOut": 3000, "closeButton": true, "showDuration": "300", "hideDuration": "1000"});
+      toastr.error('Form submission failed.It is an invalid form!', '', { "progressBar": true, "positionClass": "toast-top-center", "timeOut": 3000, "closeButton": true, "showDuration": "300", "hideDuration": "1000"});
     }
   }
