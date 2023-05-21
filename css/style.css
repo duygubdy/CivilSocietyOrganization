@@ -266,7 +266,7 @@ footer .bottom-footer {
 
 #contact-us {
   margin-top: 30px;
-  margin-left: 300px;
+  margin-left: 250px;
   width: 500px;
   padding: 20px;
   border-radius: 5px;  
@@ -275,10 +275,6 @@ footer .bottom-footer {
 form {
   display: flex;
   flex-direction: column;
-}
-.form:last-child {
-  margin-bottom: 0;
-  margin-left: auto !important;
 }
 
 input,
@@ -290,23 +286,15 @@ textarea {
   font-size: 16px;
 }
 
-input[type="submit"] {
-  background-color: #a63797;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #5c70d1;
-}
-
 #map {
   margin-top: 50px;
   position: relative;
   left: -100px;
+}
+#contact-us-table tr:nth-child(7) td:last-child input {
+  width: 100%;
+  height: auto;
+  min-height: 100px ;
 }
 
 /* Mission Style */
@@ -371,4 +359,8 @@ input[type="submit"]:hover {
 
 .mission-text h2 {
   font-size: 2em;
+}
+
+input:invalid:required {
+  border: 1px solid red;
 }
