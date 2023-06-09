@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var topics = [
     "Another",
     "Donation mistakes",
@@ -17,49 +17,32 @@ $(document).ready(function() {
   ];
 
   $.ajax({
-    url: "json_files/plant.json",
-    method: "GET",
+    url: "founder.json",
     dataType: "json",
-    success: function(response) {
-      $("#plant img").attr("src", response.image);
-      $("#plant h2").text(response.title);
-      $("#plant p").text(response.description);
-      $("#plant a").attr("href", response.link);
-    },
-    error: function() {
-      console.log("AJAX request for plant failed");
+    success: function (data) {
+      var founders = data;
+
+      for (var i = 0; i < founders.length; i++) {
+        var founder = founders[i];
+        var html = '<h3>' + founder.name + '</h3>' +
+          '<p><strong>Job:</strong> ' + founder.job + '</p>' +
+          '<p><strong>Bio:</strong> ' + founder.bio + '</p>';
+
+        $('#founder').append(html);
+      }
     }
   });
 
   $.ajax({
-    url: "json_files/child.json",
-    method: "GET",
+    url: "https://dog.ceo/api/breeds/image/random",
     dataType: "json",
-    success: function(response) {
-      $("#child img").attr("src", response.image);
-      $("#child h2").text(response.title);
-      $("#child p").text(response.description);
-      $("#child a").attr("href", response.link);
-    },
-    error: function() {
-      console.log("AJAX request for child failed");
+    success: function (data) {
+      var imageURL = data.message;
+      $('#dog').attr('src', imageURL);
     }
   });
 
-  $.ajax({
-    url: "json_files/animal.json",
-    method: "GET",
-    dataType: "json",
-    success: function(response) {
-      $("#animal img").attr("src", response.image);
-      $("#animal h2").text(response.title);
-      $("#animal p").text(response.description);
-      $("#animal a").attr("href", response.link);
-    },
-    error: function() {
-      console.log("AJAX request for animal failed");
-    }
-  });
+
 
   var selectTopics = $("#topics");
   var problemDate = $("#date");
@@ -70,7 +53,7 @@ $(document).ready(function() {
   var messageInput = $("#message");
   var submit = $("#submit-btn");
 
-  topics.forEach(function(topic) {
+  topics.forEach(function (topic) {
     var option = $("<option></option>")
       .text(topic)
       .val(topic);
@@ -89,34 +72,34 @@ $(document).ready(function() {
     required: true
   });
 
-  function giveAlert() {
-    var requiredFields = [problemDate, nameInput, emailInput, phoneInput, messageInput];
-    var filled = true;
+});
 
-    for (var i = 0; i < requiredFields.length; i++) {
-      if (requiredFields[i].val() === '') {
-        filled = false;
-        break;
-      }
-    }
+function giveAlert() {
 
-    var radioChecked = $("#contact-method input:checked").length > 0;
-    if (!radioChecked) {
+  var requiredFields = [$('#date'), $('#name'), $('#email'), $('#phone'), $('#message')];
+  var filled = true;
+
+  for (var i = 0; i < requiredFields.length; i++) {
+    if (requiredFields[i].val() === '') {
       filled = false;
-    }
-
-    if (filled) {
-      toastr.success('Form submitted successfully', '', { "progressBar": true, "positionClass": "toast-top-center", "timeOut": 3000, "closeButton": true, "showDuration": "300", "hideDuration": "1000"});
-      problemDate.val('');
-      nameInput.val('');
-      surnameInput.val('');
-      emailInput.val('');
-      phoneInput.val('');
-      messageInput.val('');
-    } else {
-      toastr.error('Form submission failed. It is an invalid form!', '', { "progressBar": true, "positionClass": "toast-top-center", "timeOut": 3000, "closeButton": true, "showDuration": "300", "hideDuration": "1000"});
+      break;
     }
   }
 
-  submit.on("click", giveAlert);
-});
+  var radioChecked = $("#contact-method input:checked").length > 0;
+  if (!radioChecked) {
+    filled = false;
+  }
+
+  if (filled) {
+    toastr.success('Form submitted successfully', '', { "progressBar": true, "positionClass": "toast-top-center", "timeOut": 3000, "closeButton": true, "showDuration": "300", "hideDuration": "1000" });
+    $('#date').val('');
+    $('#name').val('');
+    $('#surname').val('');
+    $('#email').val('');
+    $('#phone').val('');
+    $('#message').val('');
+  } else {
+    toastr.error('Form submission failed.It is an invalid form!', '', { "progressBar": true, "positionClass": "toast-top-center", "timeOut": 3000, "closeButton": true, "showDuration": "300", "hideDuration": "1000" });
+  }
+}

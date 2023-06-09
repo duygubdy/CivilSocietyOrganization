@@ -115,7 +115,29 @@ body {
   text-align: center;
   z-index: 1;
 }
+.founder-card {
+  display: flex;
+  align-items: center;
+  margin-top: 80px !important;
+  padding: 0 100px;
+  margin: 0 80px;
+}
 
+.founder-card-text {
+  width: 50%;
+  margin-right: 80px !important;
+}
+
+.founder-card img {
+  float: right;
+  height: 400px;
+  margin-left: 100px;
+}
+
+.founder-card h2 {
+  margin-bottom: 30px;
+  margin-top: 0;
+}
 .about-card {
   display: flex;
   align-items: center;
@@ -150,6 +172,7 @@ body {
 .about-card-text p {
   margin-top: 10px;
 }
+
 .footer{
   display: inline-block;
 }
@@ -212,7 +235,7 @@ footer .bottom-footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 350px !important;
   /* margin: 5px; */
   padding: 20px;
   border: 1px solid #ccc;
@@ -220,7 +243,7 @@ footer .bottom-footer {
 }
 .donate-card:nth-child(2) {
   background-color: rgb(238, 238, 238);
-  width: 400px;
+  width: 400px !important;
 }
 .donate-card img {
   width: 100%;
