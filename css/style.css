@@ -387,3 +387,9 @@ textarea {
 input:invalid:required {
   border: 1px solid red;
 }
+.ui-datepicker-prev span, .ui-datepicker-next span {
+    background-color: blue;
+}
+.ui-datepicker-prev:before, .ui-datepicker-next:before {
+  color: white !important;
+}
